@@ -286,6 +286,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joy Tang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="糖糖姐姐讲故事">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/hexo/" class="post-title-link" itemprop="url">hexo</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-12 22:39:01 / Modified: 22:39:23" itemprop="dateCreated datePublished" datetime="2019-05-12T22:39:01+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客和启动"><a href="#初始化博客和启动" class="headerlink" title="初始化博客和启动"></a>初始化博客和启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>编辑配置文件<code>_config.yml</code>，修改以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title:    //博客的名字</span><br><span class="line">author:   //你的名字</span><br><span class="line">language: zh-Hans    //语言 中文</span><br><span class="line">theme: next   //刚刚安装的主题名称</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git    //Github发布</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>安装部署工具<code>hexo-deployer-git</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>部署</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span>      <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></span><br><span class="line">hexo generate            <span class="comment"># 生成静态页面</span></span><br><span class="line">hexo server              <span class="comment"># 开启预览访问端口</span></span><br><span class="line">hexo deploy              <span class="comment"># 部署.deploy目录</span></span><br><span class="line">hexo <span class="built_in">help</span>                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment"># 查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
+<h2 id="CNAME文件丢失问题"><a href="#CNAME文件丢失问题" class="headerlink" title="CNAME文件丢失问题"></a>CNAME文件丢失问题</h2><p>github 中设置Custom domain后，会在 github 上生成<code>CNAME</code>文件，文件内容是指定的跳转域名。</p>
+<p>但是每次执行<code>hexo d</code>后，github 上的<code>CNAME</code>文件会被自动删除，导致自定义域名不可用。</p>
+<p>解决办法很简单，把<code>CNAME</code>文件放在 hexo的<code>source</code>目录下就可以了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/express/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -422,173 +577,6 @@
 <p>可以使用逗号隔开多个调试命名空间，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEBUG=http,mail,express:* node index.js</span><br></pre></td></tr></table></figure>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://expressjs.com/en/starter/generator.html" target="_blank" rel="noopener">Generator</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Joy Tang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="糖糖姐姐讲故事">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/27/hexo/" class="post-title-link" itemprop="url">Untitled</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-27 21:38:38" itemprop="dateCreated datePublished" datetime="2019-04-27T21:38:38+08:00">2019-04-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-12 22:36:06" itemprop="dateModified" datetime="2019-05-12T22:36:06+08:00">2019-05-12</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客和启动"><a href="#初始化博客和启动" class="headerlink" title="初始化博客和启动"></a>初始化博客和启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>编辑配置文件<code>_config.yml</code>，修改以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title:    //博客的名字</span><br><span class="line">author:   //你的名字</span><br><span class="line">language: zh-Hans    //语言 中文</span><br><span class="line">theme: next   //刚刚安装的主题名称</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git    //Github发布</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br></pre></td></tr></table></figure>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>安装部署工具<code>hexo-deployer-git</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>部署</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span>      <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></span><br><span class="line">hexo generate            <span class="comment"># 生成静态页面</span></span><br><span class="line">hexo server              <span class="comment"># 开启预览访问端口</span></span><br><span class="line">hexo deploy              <span class="comment"># 部署.deploy目录</span></span><br><span class="line">hexo <span class="built_in">help</span>                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment"># 查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
-<h2 id="CNAME文件丢失问题"><a href="#CNAME文件丢失问题" class="headerlink" title="CNAME文件丢失问题"></a>CNAME文件丢失问题</h2><p>github 中设置Custom domain后，会在 github 上生成<code>CNAME</code>文件，文件内容是指定的跳转域名。</p>
-<p>但是每次执行<code>hexo d</code>后，github 上的<code>CNAME</code>文件会被自动删除，导致自定义域名不可用。</p>
-<p>解决办法很简单，把<code>CNAME</code>文件放在 hexo的<code>source</code>目录下就可以了。</p>
 
           
         
